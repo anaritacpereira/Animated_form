@@ -1,0 +1,368 @@
+@import "styles/variables.scss";
+
+#root {
+  margin: 0 auto;
+  padding: 0;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateX(-100%);
+    background: white;
+    color: rgb(64, 64, 64);
+  }
+
+  100% {
+    transform: translateX(0);
+    background: linear-gradient(45deg, rgba(230,16,193,1), rgba(255,205,0,1));
+  }
+}
+
+
+@keyframes balance {
+  0% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+
+main {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $bg-primary;
+
+ .header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+    img{
+      width: 200px;
+    }
+  
+    .menu-options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      a{
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+  
+        &:hover {
+          color: $color-primary;
+          transition: all 800ms;
+        }
+      }
+    }
+
+    button {
+      border-radius: 24px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      background-color: transparent;
+      overflow: hidden;
+      position: relative;
+
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:8px;
+        cursor: pointer;
+        padding: 16px 24px;
+        border-radius: 24px;
+        border: none;
+        height: 100%;
+        width: 100%;
+      }
+      
+      .btn-face-white {
+        
+        background-color: white;
+        z-index: 998;
+      }
+
+      .btn-face-color {
+        color: rgb(64, 64, 64);
+        display: none;
+        z-index: 999;
+        position: absolute;
+        top: 0;
+      }
+
+      &:hover {
+  
+        .btn-face-color {
+          display:flex;
+          animation: appear 300ms linear 150ms forwards;
+        }
+      }
+    }
+
+ }
+
+ .content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  height: 350px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+  .heading-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 65%;
+    
+    h2 {
+      font-size: 58px;
+      font-weight: 800;
+
+      &:first-of-type{
+        align-self: flex-start;
+      }
+    }
+  }
+
+    
+    .bubble {
+      background: hsla(0, 0%, 100%, 0.1);
+      border-radius: 100%;
+      position: absolute;
+  
+      &.fire {
+        right: 170px;
+        transform: rotate(-20deg);
+        bottom: 18%;
+        padding: 13px 15px;
+        animation: balance 2800ms alternate 1200ms infinite;
+        img {
+          width: 20px;
+        }
+      }
+
+      &.rocket {
+        top:15%;
+        right: 240px;
+        padding: 21px 23px;
+        animation: balance 3500ms alternate 1800ms infinite;
+        img {
+          width: 35px;
+        }
+      }
+  
+      &.target {
+        top:-5%;
+        left: 350px;
+        padding: 24px 26px;
+        transform: rotate(-20deg);
+        animation: balance 1800ms alternate 800ms infinite;
+        img {
+          width: 60px;
+        }
+      }
+  
+      &.shop {
+        bottom:20%;
+        left:16%;
+        padding: 21px 23px;
+        transform: rotate(20deg);
+        animation: balance 2800ms alternate 1200ms infinite;
+        img {
+          width: 30px;
+        }
+      }
+  }
+  
+
+  }
+
+.box{
+  background: linear-gradient(45deg, rgba(230,16,193,1), rgba(255,205,0,1));
+  width: 95%;
+  height: auto;
+  border-radius: 25px;
+  padding: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  h3{
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 30px;
+  }
+
+  p{
+    font-weight: 400;
+    padding-top: 30px;
+  }
+
+  .services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 500;
+    gap:10px;
+    padding-bottom: 35px;
+
+    p{
+      font-size: 30px;
+    }
+
+    &.boxe{
+      flex-direction: column;
+      background-color: white;
+      border-radius: 50%;
+      padding: 40px 40px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+
+    &.hand{
+      flex-direction: column;
+      background-color: white;
+      border-radius: 50%;
+      padding: 40px 42px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+
+
+    &.pc{
+      flex-direction: column;
+      background-color: white;
+      border-radius: 50%;
+      padding: 40px 54px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+
+    &.phone{
+      flex-direction: column;
+      background-color: white;
+      border-radius: 50%;
+      padding: 40px 28px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+
+    &.smile{
+      flex-direction: column;
+      background-color: white;
+      border-radius: 50%;
+      padding: 40px 53px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .btn{
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 20px 30px;
+    margin-top: 50px;
+    cursor: pointer;
+    position: relative;
+    left: 90%;
+    
+    &:hover{
+      background-color: rgb(183, 4, 124);
+    }
+  }
+}
+
+
+.news{
+  font-weight: 600;
+  font-size: 28px;
+  color: rgb(167, 167, 167);
+  position: relative;
+  left:-300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+  
+}
+
+@media only screen and (max-width: 1022px) {
+  main{
+    .news{
+      left:-200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  main{
+    .content-container {
+      .heading-container{
+        h2 {
+          font-size: 40px;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 846px) {
+  main{
+    .box{
+      .services{
+        display: inline-block;
+        
+        justify-content: center;
+        align-items: center;
+        
+        color: black;
+        font-weight: 500;
+        gap:20px;
+        padding-bottom: 35px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  main{
+    .news{
+      left:0px;
+    }
+
+    .content-container {
+      .bubble {
+        &.rocket {
+          right: 20px;
+        }
+        &.shop {
+          left: 20px;
+        }
+      }
+    }
+  }
+}
