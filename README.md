@@ -1,5 +1,7 @@
 # Animated_form
 
+- clone of the front-end of a page with animation from one of the inspirations from the website dribbble.com;
+  
 - Languages used: Vite+React+Typescript, Sass
 
 
